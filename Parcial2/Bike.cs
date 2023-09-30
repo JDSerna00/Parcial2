@@ -35,16 +35,12 @@ namespace Parcial2
 
             if (Speed == 0.0 || Acceleration == 0.0 || Handling == 0.0 || Grip == 0.0)
             {
-                throw new InvalidOperationException("Ninguna parte de la moto puede tener un valor de 0.0.");
+                throw new InvalidOperationException("Ningún parámetro puede tener un valor de 0.0.");
             }
 
             if (Engine == null)
             {
                 Speed = 0.0;
-            }
-            else ()
-            {
-                Speed += Engine.ModifySpeed();
             }
 
             if (FrontWheel == null || BackWheel == null)
@@ -58,19 +54,10 @@ namespace Parcial2
                 Handling = 0.0;
                 Grip = 0.0;
             }
-            else()
-            {
-                Handling += FrontWheel.ModifyHandling();
-                Grip += BackWheel.ModifyGrip();
-            }
 
             if (Muffler == null)
             {
                 Acceleration /= 2.0;
-            }
-            else ()
-            {
-                Acceleration += Muffler.ModifyAcceleration();
             }
         }
     }

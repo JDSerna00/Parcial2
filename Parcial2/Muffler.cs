@@ -8,14 +8,11 @@ namespace Parcial2
 {
     public class Muffler : Parts
     {
-        public Muffler()
+        public Muffler(double grip, double handling)
+        : base(grip, handling, 0.0, 0.0)
         {
-
-        }
-
-        public double ModifyAcceleration()
-        {
-            return Acceleration;
+            Speed = 0.0; // Muffler no modifica Speed
+            Acceleration = 0.0; // Muffler no modifica Acceleration
         }
     }
 }
