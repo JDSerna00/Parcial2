@@ -12,5 +12,10 @@ namespace Parcial2
         {
 
         }
+
+        public double ModifyAcceleration()
+        {
+            return Acceleration;
+        }
     }
 }

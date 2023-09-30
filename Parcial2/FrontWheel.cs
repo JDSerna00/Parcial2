@@ -12,5 +12,10 @@ namespace Parcial2
         {
 
         }
+
+        public double ModifyHandling()
+        {
+            return (FrontWheelValue + BackWheelValue) / 2.0;
+        }
     }
 }

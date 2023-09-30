@@ -42,6 +42,10 @@ namespace Parcial2
             {
                 Speed = 0.0;
             }
+            else ()
+            {
+                Speed += Engine.ModifySpeed();
+            }
 
             if (FrontWheel == null || BackWheel == null)
             {
@@ -54,10 +58,19 @@ namespace Parcial2
                 Handling = 0.0;
                 Grip = 0.0;
             }
+            else()
+            {
+                Handling += FrontWheel.ModifyHandling();
+                Grip += BackWheel.ModifyGrip();
+            }
 
             if (Muffler == null)
             {
                 Acceleration /= 2.0;
+            }
+            else ()
+            {
+                Acceleration += Muffler.ModifyAcceleration();
             }
         }
     }

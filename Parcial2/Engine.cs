@@ -12,5 +12,11 @@ namespace Parcial2
         {
 
         }
+
+        public double ModifySpeed()
+        {
+            return Speed;
+        }
+
     }
 }
