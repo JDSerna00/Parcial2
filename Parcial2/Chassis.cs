@@ -8,9 +8,10 @@ namespace Parcial2
 {
     public class Chassis : Parts
     {
-        internal Chassis()
+        public Chassis()
+        : base(0.0, 0.0, 0.0, 0.0)
         {
-
+            // Chassis no modifica ningún parámetro
         }
     }
 }

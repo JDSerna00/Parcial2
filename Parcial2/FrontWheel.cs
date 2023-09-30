@@ -8,14 +8,10 @@ namespace Parcial2
 {
     public class FrontWheel : Parts
     {
-        public FrontWheel()
+        public FrontWheel(double grip, double handling, double speed, double acceleration)
+        : base(grip, handling, speed, acceleration)
         {
 
-        }
-
-        public double ModifyHandling()
-        {
-            return (FrontWheelValue + BackWheelValue) / 2.0;
         }
     }
 }
