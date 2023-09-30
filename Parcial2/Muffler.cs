@@ -14,5 +14,10 @@ namespace Parcial2
             Speed = 0.0; // Muffler no modifica Speed
             Acceleration = 0.0; // Muffler no modifica Acceleration
         }
+
+        public double ModifyAcceleration()
+        {
+            return Acceleration;
+        }
     }
 }

@@ -13,5 +13,10 @@ namespace Parcial2
         {
             Grip = 0.0; // Engine no modifica Grip
         }
+
+        public double ModifySpeed()
+        {
+            return Speed;
+        }
     }
 }

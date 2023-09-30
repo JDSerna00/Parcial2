@@ -13,5 +13,10 @@ namespace Parcial2
         {
 
         }
+
+        public double ModifyHandling()
+        {
+            return Handling;
+        }
     }
 }
