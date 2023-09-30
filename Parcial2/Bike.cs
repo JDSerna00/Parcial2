@@ -43,6 +43,11 @@ namespace Parcial2
         {
             Muffler = muffler;
         }
+        public bool CanBeUsedInRace()
+        {
+            // Verifica si la moto tiene todas sus partes esenciales para ser utilizada en una carrera.
+            return FrontWheel != null && BackWheel != null && Engine != null && Muffler != null;
+        }
         public Bike(Engine engine, Muffler muffler,FrontWheel frontWheel, BackWheel backWheel, Chassis chassis)
         {
             Speed = 1.0;
@@ -56,7 +61,7 @@ namespace Parcial2
             Engine = engine;
             Chassis = chassis ?? new Chassis();
 
-            if (FrontWheel == null || BackWheel == null || Engine == null || Muffler == null)
+            if (FrontWheel == null || BackWheel == null || Engine == null || Muffler == null || Chassis == null)
             {
                 throw new InvalidOperationException("La moto no tiene todas las partes requeridas.");
             }
