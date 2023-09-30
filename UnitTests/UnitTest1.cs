@@ -9,9 +9,33 @@ namespace UnitTests
         }
 
         [Test]
-        public void Test1()
+        public void BikeCanBeCreated()
         {
-            Assert.Pass();
+            
+        }
+
+        [Test]
+        public void BikesCanBeUsed()
+        {
+
+        }
+
+        [Test]
+        public void PartCanBeAdded()
+        {
+
+        }
+
+        [Test]
+        public void PartsModifyParameters()
+        {
+
+        }
+
+        [Test]
+        public void MaxParameterValueOnConstructor()
+        {
+
         }
     }
 }
