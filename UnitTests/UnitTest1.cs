@@ -93,7 +93,50 @@ namespace UnitTests
         [Test]
         public void PartsModifyParameters()
         {
+            // Arrange
+            var bike = new Bike(null, null, null, null, null); // Crea una moto sin partes
 
+            // Act & Assert
+            Assert.AreEqual(0.0, bike.Speed, "Speed debe ser 0.0 al crear la moto sin motor.");
+            Assert.AreEqual(0.0, bike.Acceleration, "Acceleration debe ser 0.0 al crear la moto sin alguna llanta.");
+            Assert.AreEqual(0.0, bike.Handling, "Handling debe ser 0.0 al crear la moto sin llantas.");
+            Assert.AreEqual(0.0, bike.Grip, "Grip debe ser 0.0 al crear la moto sin llantas.");
+
+            // Agregar partes con modificación de parámetros 0.
+            bike.AddPart(new Muffler(0.0, 0.0)); // Agrega una parte sin modificar parámetros
+            bike.AddPart(new Engine(0.0, 0.0));
+            bike.AddPart(new FrontWheel(0.0, 0.0, 0.0, 0.0));
+            bike.AddPart(new BackWheel(0.0, 0.0, 0.0, 0.0));            
+
+            // Act & Assert
+            Assert.AreEqual(1.0, bike.Speed, "Speed no debe cambiar cuando se agrega una parte sin modificarlo.");
+            Assert.AreEqual(1.0, bike.Acceleration, "Acceleration no debe cambiar cuando se agrega una parte sin modificarlo.");
+            Assert.AreEqual(1.0, bike.Handling, "Handling no debe cambiar cuando se agrega una parte sin modificarlo.");
+            Assert.AreEqual(1.0, bike.Grip, "Grip no debe cambiar cuando se agrega una parte sin modificarlo.");
+
+            // Agregar partes con modificaciones de parámetros
+            bike.AddPart(new Muffler(1.0, 0.8)); // Agrega una parte que modifica los parámetros
+
+            // Act & Assert
+            Assert.AreEqual(1.0, bike.Speed, "Speed no debe cambiar cuando se agrega una parte que modifica otros parámetros.");
+            Assert.AreEqual(1.0, bike.Acceleration, "Acceleration no debe cambiar cuando se agrega una parte que modifica otros parámetros.");
+            Assert.AreEqual(1.2, bike.Handling, "Handling debe cambiar cuando se agrega una parte que modifica Handling.");
+            Assert.AreEqual(0.8, bike.Grip, "Grip debe cambiar cuando se agrega una parte que modifica Grip.");
+
+            // Agregar más partes
+            bike.AddPart(new FrontWheel(0.3, 0.1, 0.5, 0.4)); // Agrega otra parte que modifica los parámetros
+
+            // Act & Assert
+            Assert.AreEqual(1.0, bike.Speed, "Speed no debe cambiar cuando se agregan partes que modifican otros parámetros.");
+            Assert.AreEqual(1.1, bike.Acceleration, "Acceleration debe cambiar cuando se agregan partes que modifican Acceleration.");
+            Assert.AreEqual(1.7, bike.Handling, "Handling debe cambiar cuando se agregan partes que modifican Handling.");
+            Assert.AreEqual(1.2, bike.Grip, "Grip debe cambiar cuando se agregan partes que modifican Grip.");
+
+            // Verificar que todos los parámetros estén dentro de los límites
+            Assert.IsTrue(bike.Speed >= 1.0 && bike.Speed <= 5.0, "Speed debe estar dentro de los límites.");
+            Assert.IsTrue(bike.Acceleration >= 1.0 && bike.Acceleration <= 5.0, "Acceleration debe estar dentro de los límites.");
+            Assert.IsTrue(bike.Handling >= 1.0 && bike.Handling <= 5.0, "Handling debe estar dentro de los límites.");
+            Assert.IsTrue(bike.Grip >= 1.0 && bike.Grip <= 5.0, "Grip debe estar dentro de los límites.");
         }
 
         [Test]
