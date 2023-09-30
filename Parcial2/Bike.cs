@@ -33,6 +33,11 @@ namespace Parcial2
                 throw new InvalidOperationException("La moto no tiene todas las partes requeridas.");
             }
 
+            if (Speed == 0.0 || Acceleration == 0.0 || Handling == 0.0 || Grip == 0.0)
+            {
+                throw new InvalidOperationException("Ninguna parte de la moto puede tener un valor de 0.0.");
+            }
+
             if (Engine == null)
             {
                 Speed = 0.0;
