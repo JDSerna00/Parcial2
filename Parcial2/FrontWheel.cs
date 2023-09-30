@@ -11,7 +11,7 @@ namespace Parcial2
         public FrontWheel(double grip, double handling, double speed, double acceleration)
         : base(grip, handling, speed, acceleration)
         {
-
+            Handling = handling;
         }
 
         public double ModifyHandling()

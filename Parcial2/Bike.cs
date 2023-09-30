@@ -19,29 +19,28 @@ namespace Parcial2
         public double Handling { get; private set; }
         public double Grip { get; private set; }
 
-        public void AddFrontWheel(FrontWheel frontWheel)
+        public void AddPart(Parts part)
         {
-            FrontWheel = frontWheel;
-        }
+            if (part == null)
+            {
+                throw new ArgumentNullException("La pieza no puede ser nula.");
+            }
 
-        public void AddBackWheel(BackWheel backWheel)
-        {
-            BackWheel = backWheel;
-        }
 
+            // Sumar los parámetros de la pieza a los parámetros de la moto
+            Speed += part.Speed;
+            Acceleration += part.Acceleration;
+            Handling += part.Handling;
+            Grip += part.Grip;
+        }
         public void AddChassis(Chassis chassis)
         {
+            if (Chassis != null)
+            {
+                throw new InvalidOperationException("No se puede reemplazar el chasis existente.");
+            }
+
             Chassis = chassis;
-        }
-
-        public void AddEngine(Engine engine)
-        {
-            Engine = engine;
-        }
-
-        public void AddMuffler(Muffler muffler)
-        {
-            Muffler = muffler;
         }
         public bool CanBeUsedInRace()
         {
@@ -61,10 +60,6 @@ namespace Parcial2
             Engine = engine;
             Chassis = chassis ?? new Chassis();
 
-            if (FrontWheel == null || BackWheel == null || Engine == null || Muffler == null || Chassis == null)
-            {
-                throw new InvalidOperationException("La moto no tiene todas las partes requeridas.");
-            }
 
             if (Speed == 0.0 || Acceleration == 0.0 || Handling == 0.0 || Grip == 0.0)
             {
@@ -77,7 +72,7 @@ namespace Parcial2
             }
             else 
             {
-                Speed += Engine.ModifySpeed();
+                //Speed += Engine.ModifySpeed();
             }
 
             if (FrontWheel == null || BackWheel == null)
@@ -93,8 +88,8 @@ namespace Parcial2
             }
             else 
             {
-                Handling += FrontWheel.ModifyHandling();
-                Grip += BackWheel.ModifyGrip();
+                //Handling += FrontWheel.ModifyHandling();
+                //Grip += BackWheel.ModifyGrip();
             }
 
             if (Muffler == null)
@@ -103,7 +98,7 @@ namespace Parcial2
             }
             else 
             {
-                Acceleration += Muffler.ModifyAcceleration();
+                //Acceleration += Muffler.ModifyAcceleration();
             }
         }
     }
