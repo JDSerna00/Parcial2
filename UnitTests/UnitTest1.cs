@@ -142,7 +142,21 @@ namespace UnitTests
         [Test]
         public void MaxParameterValueOnConstructor()
         {
+            // Crea una instancia de cada parte con valores que no superen 5.0 y que sumen 10.0 o menos
+            Engine engine = new Engine(2.0, 3.0);
+            Muffler muffler = new Muffler(1.0, 1.0);
+            FrontWheel frontWheel = new FrontWheel(2.0, 2.0, 2.0, 2.0);
+            BackWheel backWheel = new BackWheel(1.0, 1.0, 1.0, 1.0);
+            Chassis chassis = new Chassis();
 
+            // Crea una moto utilizando todas las partes
+            Bike bike = new Bike(engine, muffler, frontWheel, backWheel, chassis);
+
+            // Verifica que los parámetros de la moto se inicialicen correctamente
+            Assert.AreEqual(2.0, bike.Speed);
+            Assert.AreEqual(3.0, bike.Grip);
+            Assert.AreEqual(3.0, bike.Handling);
+            Assert.AreEqual(3.0, bike.Acceleration);
         }
     }
 }
