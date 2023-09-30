@@ -10,7 +10,7 @@ namespace Parcial2
     {
         public FrontWheel FrontWheel { get; set; }
         public BackWheel BackWheel { get; set; }
-        public Chassis Chassis { get; set; }
+        public Chassis Chassis { get; private set; }
         public Engine Engine { get; set; }
         public Muffler Muffler { get; set; }
 
@@ -19,12 +19,14 @@ namespace Parcial2
         public double Handling { get; private set; }
         public double Grip { get; private set; }
 
-        public Bike()
+        public Bike(Chassis chassis = null)
         {
             Speed = 1.0;
             Acceleration = 1.0;
             Handling = 1.0;
             Grip = 1.0;
+
+            Chassis = chassis ?? new Chassis();
         }
     }
 }

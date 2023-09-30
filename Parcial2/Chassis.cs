@@ -8,7 +8,7 @@ namespace Parcial2
 {
     public class Chassis
     {
-        public Chassis()
+        internal Chassis()
         {
 
         }
