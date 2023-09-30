@@ -14,6 +14,16 @@ namespace Parcial2
         public double Acceleration { get; set; }
         protected Parts(double grip, double handling, double speed, double acceleration)
         {
+            if (grip > 5.0 || handling > 5.0 || speed > 5.0 || acceleration > 5.0)
+            {
+                throw new ArgumentException("Los valores de los parámetros no pueden ser superiores a 5.0.");
+            }
+
+            if (grip + handling + speed + acceleration > 10.0)
+            {
+                throw new ArgumentException("La suma de los valores de los parámetros no puede ser superior a 10.0.");
+            }
+
             Grip = grip;
             Handling = handling;
             Speed = speed;
