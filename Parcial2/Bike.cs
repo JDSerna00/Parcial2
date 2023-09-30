@@ -27,6 +27,11 @@ namespace Parcial2
             Grip = 1.0;
 
             Chassis = chassis ?? new Chassis();
+
+            if (FrontWheel == null || BackWheel == null || Engine == null || Muffler == null)
+            {
+                throw new InvalidOperationException("La moto no tiene todas las partes requeridas.");
+            }
         }
     }
 }

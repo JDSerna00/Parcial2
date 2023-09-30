@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Parcial2
 {
-    public class BackWheel
+    public class BackWheel : Parts
     {
         public BackWheel()
         {

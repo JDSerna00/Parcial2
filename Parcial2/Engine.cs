@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Parcial2
 {
-    public class Engine
+    public class Engine : Parts
     {
         public Engine()
         {

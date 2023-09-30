@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Parcial2
 {
-    public class Chassis
+    public class Chassis : Parts
     {
         internal Chassis()
         {

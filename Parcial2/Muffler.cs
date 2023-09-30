@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Parcial2
 {
-    public class Muffler
+    public class Muffler : Parts
     {
         public Muffler()
         {

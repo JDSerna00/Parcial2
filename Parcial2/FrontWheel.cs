@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Parcial2
 {
-    public class FrontWheel
+    public class FrontWheel : Parts
     {
         public FrontWheel()
         {
