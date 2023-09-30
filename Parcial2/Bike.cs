@@ -32,6 +32,28 @@ namespace Parcial2
             {
                 throw new InvalidOperationException("La moto no tiene todas las partes requeridas.");
             }
+
+            if (Engine == null)
+            {
+                Speed = 0.0;
+            }
+
+            if (FrontWheel == null || BackWheel == null)
+            {
+                Acceleration = 0.0;
+            }
+
+            if (FrontWheel == null && BackWheel == null)
+            {
+                Acceleration = 0.0;
+                Handling = 0.0;
+                Grip = 0.0;
+            }
+
+            if (Muffler == null)
+            {
+                Acceleration /= 2.0;
+            }
         }
     }
 }
